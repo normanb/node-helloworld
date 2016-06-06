@@ -10,10 +10,10 @@ app.get("/hello", function (request, response) {
     response.end("Hello World!\n");
 });
 
-app.listen(port);
+app.get("/kill", function (request, response) {
+  process.exit(1);  
+});
 
-setTimeout(function() {
-    process.exit(1);
-}, 60000);
+app.listen(port);
 
 require("cf-deployment-tracker-client").track();
