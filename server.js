@@ -12,4 +12,8 @@ app.get("/hello", function (request, response) {
 
 app.listen(port);
 
+setTimeout(function() {
+    process.exit(1);
+}, 60000);
+
 require("cf-deployment-tracker-client").track();
