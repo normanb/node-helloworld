@@ -14,6 +14,10 @@ app.get("/kill", function (request, response) {
   process.exit(1);  
 });
 
+setTimeout(function() {
+    process.exit(1);
+}, 300000)
+
 app.listen(port);
 
 require("cf-deployment-tracker-client").track();
